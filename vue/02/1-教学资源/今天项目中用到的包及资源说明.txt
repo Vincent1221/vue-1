@@ -1,0 +1,35 @@
+1.在项目中第一次使用Vue，显示`Hello Vue` 用到的包 (自己手工打包)
+	包 ： 
+		开发环境的包 ： vue-loader vue-template-compiler css-loader
+		生产环境的包 :  vue
+	安装方式 ： 
+		npm install vue-loader vue-template-compiler css-loader --save-dev
+		npm install vue --save
+	
+2.在使用`html-webpack-plugin`插件 + `webpack-dev-server`包 来实现页面(文件)更新之后,自动打包并且刷新页面
+	包 ：
+		开发环境的包 ：webpack webpack-dev-server html-webpack-plugin
+	安装方式 ：
+		npm install webpack webpack-dev-server html-webpack-plugin --save-dev
+		
+3.在实现App.vue顶部显示栏的时候
+	包 :
+		生产环境的包 ：mint-ui
+	安装方式 :
+		npm install mint-ui --save
+		
+		
+4.在点击App.vue底部Tabbar实现路由跳转功能的时候
+	包 :
+		生产环境的包 : vue-router
+	安装方式 ：
+		npm install vue-router --save
+		
+5.使用MUI实现底部Tabbar四个选项卡按钮时候不是使用npm安装,是直接放在项目的statics目录下
+
+
+6.打包css
+	npm install style-loader css-loader --save-dev
+
+7.打包mui中的ttf
+	npm install file-loader url-loader --save-dev

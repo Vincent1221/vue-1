@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li :key="item.no" v-for="(item,index) in persons">{{index}}---{{item.name}}---{{item.age}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            persons:[
+                {no:10001,name:"刘德华",age:50},
+                {no:10002,name:"张学友",age:48},
+                {no:10003,name:"黎明",age:46},
+                {no:10004,name:"郭富城",age:47}
+            ]
+        }
+    })
+</script>
+</html>

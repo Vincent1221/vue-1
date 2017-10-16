@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>路由</title>
+  <script src="https://cdn.bootcss.com/vue/2.3.3/vue.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/2.5.3/vue-router.js"></script>
+</head>
+<body>
+        <!-- View -->
+        <div id="app">
+            <p>
+                    <router-link to="/goodsList">商品列表</router-link>
+                    <router-link to="/newsList/15">新闻列表</router-link>
+            </p>
+            <!-- 路由出口 -->
+            <!-- 路由匹配到的组件将渲染在这里 -->
+            <!-- 可以认为是一个占位符 -->
+            <router-view></router-view>
+        </div>
+</body>
+<script type="text/javascript">
+      //1.组件只需要定义，不需要注册，注册放到路由中
+      var goodsListComponent = Vue.extend({
+          template:'<div>我是商品列表</div>'
+      })
+
+      var newsListComponent = Vue.extend({
+          template:'<div>我是新闻组件{{$route.params.newsId}}</div>'
+      })
+
+      //2.配置路由，配置点击了某个路径之后，应该显示哪一个组件
+      var routers = new VueRouter({
+        routes:[
+          {path:'/goodsList',component:goodsListComponent},
+          {path:'/newsList/:newsId',component:newsListComponent}
+        ]
+      })
+
+      //1.创建Vue实例
+      var vm = new Vue({
+          el:'#app',
+          router:routers //把我们的路由关联到某一个vue实例上
+      })
+</script>
+</html>

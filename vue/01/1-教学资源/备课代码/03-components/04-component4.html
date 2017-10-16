@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+</head> 
+        
+<script type="text/x-template" id="templateId4">
+    <div>
+        用户名4:<input v-model="username" type="text"><br/>
+        密码4:<input type="password"><br/>
+        <button @click="userLogin">登录4</button>
+    </div>
+</script>
+
+<body>
+    <div id="app">
+        <!--以后实际开发中，不会写span,div,h1 比较散的代码-->
+        <login4></login4>
+    </div>
+</body>
+<script>
+    //1.定义和注册合二为一
+    /**
+    * 参数1：组件在id=app中使用的名字
+    * 参数2：组件的内容
+    */
+    Vue.component('login4',{
+        template:'#templateId4',
+        methods:{
+            userLogin:function(){
+                console.log("444")
+            }
+        },
+        data:function(){
+            return {
+                username:'第4种'
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el:'#app'
+    })
+</script>
+</html>

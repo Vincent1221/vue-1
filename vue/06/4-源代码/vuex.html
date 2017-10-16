@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vuex的实践</title>
+  <script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+  <script src="https://cdn.bootcss.com/vuex/2.3.1/vuex.js"></script>
+</head>
+<body>
+      <div id="app1">
+            当前投票数 {{getVote1}}<br/>
+            <button @click="btnVote1">点击投票</button>
+      </div>
+      <hr/>
+      <div id="app2">
+            当前投票数 {{getVote2}}<br/>
+            <button @click="btnVote2">点击投票</button>
+      </div>
+
+      <script type="text/javascript">
+            //1.创建store
+            var store = new Vuex.Store({
+              state:{
+                vote:0
+              },
+              mutations:{//变化
+                addVote(state){
+                  state.vote++
+                }
+              }
+            })
+
+            var vm1 = new Vue({
+              el:"#app1",
+              store:store,//vuex
+              methods:{
+                btnVote1(){
+                  store.commit('addVote')
+                }
+              },
+              computed:Vuex.mapState({
+                getVote1:function(store){
+                  console.log("1111")
+                  return store.vote
+                }
+              })
+            })
+
+            var vm2 = new Vue({
+              el:"#app2",
+              store:store,
+              methods:{
+                btnVote2(){
+                  store.commit('addVote')
+                }
+              },
+              computed:Vuex.mapState({
+                getVote2:function(store){
+                  console.log("22222")
+                  return store.vote
+                }
+              })
+            })
+      </script>
+</body>
+</html>

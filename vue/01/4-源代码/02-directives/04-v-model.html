@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 开发阶段，用未压缩的，因为里面有很多调试信息 -->
+    <!-- 上线阶段用压缩的，节约流量，快 -->
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="v1">+<input type="text" v-model="v2">
+        <button @click="add">=</button>&nbsp;<input type="text" v-model="result">
+    </div>
+</body>
+<script>
+    //MVVM中的VM
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            v1:1,
+            v2:2,
+            result:0
+        },
+        methods:{
+            add:function(){
+                /**
+                * 把v1和v2的值，加起来赋值给result
+                */
+                //this代表vm  this.v1 就能访问到v1的值
+                this.result = parseInt(this.v1)+parseInt(this.v2)
+            }
+        }
+    })
+</script>
+</html>

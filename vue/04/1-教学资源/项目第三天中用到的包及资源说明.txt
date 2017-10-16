@@ -1,0 +1,16 @@
+1.时间格式化
+	包:
+		生产环境的包:moment
+
+	安装方式:
+		npm install moment --save
+
+2.jquery
+	包: 
+		生产环境的包:jquery
+
+
+	安装方式:
+		npm install jquery --save
+
+

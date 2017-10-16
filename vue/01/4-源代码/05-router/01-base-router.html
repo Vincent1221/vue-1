@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 触发的超链接 -->
+        <router-link to="/newslist">新闻列表</router-link>
+        <router-link to="/goodslist">商品列表</router-link>
+        <router-link to="/newsDetail/13">新闻详情</router-link>
+
+        <!-- 我们这一块将来是用页面(组件)替换的 -->
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //1.定义好组件
+    //定义新闻列表组件
+    var newsListComponent =  Vue.extend({
+        template:'<ul><li>肾8来了</li><li>程序员被逼死了</li><li>台风又要来了</li></ul>'
+    })
+
+    //商品列表组件
+    var goodsListComponent = {
+        template:'<ul><li>越南新娘</li><li>iPhone X</li><li>肾宝片</li></ul>'
+    }
+
+    //新闻详情组件
+    var newsDetailComponent = {
+        template:'<div>新闻详情---{{ $route.params.newsId }}</div>'
+    }
+
+    //2.创建路由对象，设置好路由规则
+    var router = new VueRouter({
+        routes : [
+            //具体的路由规则
+            /**
+            path:代表路径
+            component:触发之后，要呈现的组件
+            */
+            { path: '/', redirect: '/newslist' },
+            {path:'/newslist',component:newsListComponent},
+            {path:'/goodslist',component:goodsListComponent},
+            {path:'/newsDetail/:newsId',component:newsDetailComponent}
+        ]
+    })
+
+    //3.创建根实例，把路由注入进来
+    var vm = new Vue({
+        el:'#app',
+        router // 相当于router:router
+    })
+</script>
+</html>

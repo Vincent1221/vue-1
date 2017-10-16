@@ -1,0 +1,19 @@
+1.vue-preview 这个是预览我们图片
+	包
+		生成环境中的包：vue-preview
+
+	安装方式:
+		npm install vue-preview -S
+	
+	使用方式:
+		见笔记,文档
+
+2.axios 发送Ajax请求
+	包
+		生成环境中的包：axios
+
+	安装方式:
+		npm install axios -S
+	
+	使用方式:
+		见笔记,文档

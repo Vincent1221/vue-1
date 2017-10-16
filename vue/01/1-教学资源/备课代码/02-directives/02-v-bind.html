@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="img_url">
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            img_url:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1499593805779&di=ccba73882c47b8601ebe7d2ba68a6c0c&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2015%2F141%2F16%2F9F284W674YYX.jpg'
+        }
+    })
+</script>
+</html>

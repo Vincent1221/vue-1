@@ -1,0 +1,17 @@
+坚持
+
+我只能说我很慌。
+
+购物车数据传递中第一种方式与第二种实现方式的,函数放的位置有点不明白--为什么第一种方式只需要调用一次啊(放在created中),他不应该也是需要调用多次的吗?
+
+好方！！！
+
+面试面试没过,VUE VUE没学好
+
+心飘了
+
+created(){ //注册自定义事件,接收传递过来的值 bus.$on('goodsCount', function (count) { this.myCount += count }.bind(this)) 老师，App.vue中这里用bus接收传递过来的值是会变化的，为什么不放在update中，而放在created中呢？
+
+还没结课吗？后天不想来了
+
+Vuex有点蒙

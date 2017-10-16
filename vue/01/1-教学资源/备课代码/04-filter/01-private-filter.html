@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+</head> 
+
+<body>
+    <div id="app1">
+        {{message | toUC}}
+    </div>
+
+    <div id="app2">
+        {{message2 | toUC2}}
+    </div>
+</body>
+<script>
+   
+
+    var vm1 = new Vue({
+        el:'#app1',
+        data:{
+            message : 'i am a Good boy'
+        },
+        filters:{
+            toUC:function(input){
+                return input.toUpperCase()
+            }
+        }
+    })
+
+    var vm2 = new Vue({
+        el:'#app2',
+        data:{
+            message2 : 'you are a good Gay'
+        },
+        filters:{
+            toUC2:function(input){
+                return input.toUpperCase()
+            }
+        }
+    })
+</script>
+</html>

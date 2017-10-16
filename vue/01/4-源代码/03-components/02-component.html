@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <login></login>
+    </div>
+</body>
+<script>
+    //1,定义&注册写成一步
+    /**
+        参数1：组件的名称
+        参数2：组件的对象
+    */
+    Vue.component('login',{
+        //组件的模版，模版里面写的就是组件的html代码
+        template:'<div><span>{{message}}</span><br/>用户名2:<input type="text" placeholder="请求输入用户名"><br/>密码2<input type="password" placeholder="请求输入密码"><br/><button @click="loginClick">登录2</button></div>',
+        
+        data:function(){
+            return {
+                message:"Hello 组件"
+            }
+        },
+        methods:{
+            loginClick:function(){
+                console.log("---起飞吧---")
+            }
+        }
+    })
+
+    //3.创建vm
+    var vm = new Vue({
+        el:"#app"
+    })
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--以后实际开发中，不会写span,div,h1 比较散的代码-->
+        <login></login>
+    </div>
+</body>
+<script>
+    //1.定义一个组件
+    var loginComponent = Vue.extend({
+        template:'<div>用户名:<input type="text"><br/>密码:<input type="password"><br/><button>登录</button></div>'
+    })
+
+    //2.注册
+    /**
+    * 参数1：组件在id=app中使用的名字
+    * 参数2：组件的内容
+    */
+    Vue.component('login',loginComponent)
+
+    var vm = new Vue({
+        el:'#app'
+    })
+</script>
+</html>

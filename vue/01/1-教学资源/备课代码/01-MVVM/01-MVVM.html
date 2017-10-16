@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+</head>
+<body>
+    <!--告诉Vue，你只需要解析body中id=app里面的内容-->
+    <!--以后做项目的时候，一定要有一个根节点，根节点一定要在Vue实例通过el配置-->
+    <div id="app">
+        {{message}}
+    </div>
+    <br/>
+    {{message}}
+</body>
+<script>
+    // vm就是我们Vue中的实例(对象) 
+    //参考:https://cn.vuejs.org/v2/guide/instance.html
+    var vm = new Vue({
+        el:'#app',//代表我们创建的这个Vue实例，只会解析id=app中的内容
+        data:{//这个就是MVVM中的model,今天先写死，后面肯定要发送Ajax从服务器上面获取数据
+            message:'Hello 天使'
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>get请求</title>
+  <script src="https://cdn.bootcss.com/vue/2.3.3/vue.js">
+  </script>
+  <script src="https://cdn.bootcss.com/vue-resource/1.3.3/vue-resource.js"></script>
+</head>
+<body>
+        <!-- View -->
+        <div id="app">
+              <button @click="getLogin">发送get请求</button>
+        </div>
+</body>
+<script type="text/javascript">
+      //1.创建Vue实例
+      var vm1 = new Vue({
+          el:'#app',
+          data:{
+            message:"I AM A GOOD Man"
+          },
+          methods:{
+            getLogin:function(){
+                var url = "http://127.0.0.1:3000/login?username=zhangsan&password=123"
+                this.$http.get(url).then(function(response){
+                  console.log(response.body)
+                },function(err){
+                  
+                })
+            }
+          }
+      })
+</script>
+</html>

@@ -1,0 +1,15 @@
+理解Vue组件的生命周期
+
+理解Vue组件生命周期的应用场景
+
+学会使用公共bus在非父子组件之间传值
+
+理解Vuex的基本概念
+
+理解Vuex的核心概念
+
+学会在项目中集成Vuex
+
+学会使用mutations存储数据到state中
+
+学会使用getters从state中获取数据

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 开发阶段，用未压缩的，因为里面有很多调试信息 -->
+    <!-- 上线阶段用压缩的，节约流量，快 -->
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-if="isShow">if---我在哪里?</span>
+        <span v-else>我出不出来呢?</span>
+
+
+        <!-- <span v-show="isShow">show --- 我在哪里?</span> -->
+    </div>
+</body>
+<script>
+    //MVVM中的VM
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            isShow:false
+        }
+    })
+</script>
+</html>

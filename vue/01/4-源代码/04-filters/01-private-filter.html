@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <login></login><br/>
+
+        <register></register>
+    </div>
+</body>
+<script>
+    //1.定义并且注册 登录组件
+    Vue.component('login',{
+        template:"<span>登录 {{message | toUp('小明')}}</span>",
+        data:function(){
+            return {
+                message : 'hello world'
+            }
+        },
+        filters:{
+            /**
+                input 要过滤的原始数据
+            */
+            toUp:function(input,name){
+                console.log(name)
+                return input.toUpperCase()
+            }
+        }
+    })
+
+    //2.定义并且注册 注册组件
+    Vue.component('register',{
+        template:"<span>注册 {{message | toUp('小明')}}</span>",
+        data:function(){
+            return {
+                message : 'hello girl'
+            }
+        },
+        filters:{
+            /**
+                input 要过滤的原始数据
+            */
+            toUp:function(input,name){
+                console.log(name)
+                return input.toUpperCase()
+            }
+        }
+    })
+
+    //根实例(对象)
+    var vm = new Vue({
+        el:'#app'
+    })
+</script>
+</html>

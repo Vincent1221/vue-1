@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(person,i) in persons" :key="person.id">
+                {{i}} --- {{person.name}}---{{person.age}}
+            </li>
+        </ul>
+        <button @click="changeValue">更改值</button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app', //el是必须的
+        data:{
+           persons:[
+               {id:'10001',name:'张三丰',age:666},
+               {id:'10002',name:'张无忌',age:555},
+               {id:'10003',name:'张学友',age:55}
+           ]
+        },
+        methods:{
+            changeValue:function(){
+                this.persons[2]['name']="王五"
+                this.persons[2]['age']=333
+            }
+        }
+    })
+</script>
+</html>
